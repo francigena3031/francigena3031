@@ -248,7 +248,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <section class="hero">
     <div class="hero-img" role="img" aria-label="Il salotto con il soffitto affrescato e la vista sui tetti di Gambassi"></div>
   </section>
-  <div class="hero-sub"><h1>Francigena <span>·</span> Gambassi Terme</h1></div>
+  <div class="hero-sub"><h1 id="heroSub">Francigena <span>·</span> Gambassi Terme</h1></div>
 
   <section class="book" id="prenota">
     <form class="w" id="bookForm">
@@ -417,6 +417,7 @@ addEventListener('keydown',e=>{if(ov.hidden)return;if(e.key==='Escape'){big.hidd
 function boot(C){
  const D=window.__D||{};const T=(it,en,es)=>{if(it&&(en||es))D[it]=[en||it,es||it]};
  const H=C.home||{};
+ if(H.scritta_sotto_foto){{const sp=v=>String(v||'').split(' · '),a=sp(H.scritta_sotto_foto),b=sp(H.scritta_sotto_foto_en),c=sp(H.scritta_sotto_foto_es);a.forEach((x,i)=>T(x.trim(),(b[i]||'').trim(),(c[i]||'').trim()))}$('heroSub').innerHTML=String(H.scritta_sotto_foto).split(' · ').map(esc).join(' <span>·</span> ')}
  if(H.foto_principale)document.querySelector('.hero-img').style.backgroundImage='linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,0) 22%),url("'+im(H.foto_principale,2000)+'")';
  const HM={'sala-colazione':H.foto_colazione,'salotto':H.foto_salotto};
  document.querySelectorAll('[data-img]').forEach(e=>{const u=HM[e.dataset.img];if(u)e.style.backgroundImage='url("'+im(u,1200)+'")'});
