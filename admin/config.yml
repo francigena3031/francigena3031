@@ -1,0 +1,103 @@
+# Pannello di gestione Francigena 30, 31
+backend:
+  name: github
+  repo: francigena3031/francigena3031
+  branch: main
+  commit_messages:
+    update: "Aggiornato {{slug}} dal pannello"
+    uploadMedia: "Caricata foto {{path}}"
+
+locale: it
+site_url: https://www.francigena3031.it
+display_url: https://www.francigena3031.it
+logo_url: /img/salotto.jpg
+media_folder: img
+public_folder: /img
+
+collections:
+  - name: sito
+    label: "Contenuti del sito"
+    editor: { preview: false }
+    files:
+      - name: contenuti
+        label: "Foto, camere e informazioni"
+        file: content/sito.json
+        format: json
+        fields:
+          - label: "Foto della home"
+            name: home
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Foto principale (in alto)", name: foto_principale, widget: image, hint: "Meglio orizzontale, almeno 2000 px di larghezza" }
+              - { label: "Foto 'La colazione'", name: foto_colazione, widget: image }
+              - { label: "Foto 'Il salotto'", name: foto_salotto, widget: image }
+          - { label: "Prezzo a notte da (€)", name: prezzo_da, widget: number, value_type: int, min: 0 }
+          - label: "Informazioni pratiche"
+            name: info
+            widget: object
+            fields:
+              - { label: "Indirizzo", name: indirizzo, widget: string }
+              - { label: "Codice CIN", name: cin, widget: string }
+              - { label: "Check-in (es. dalle 15:00)", name: check_in, widget: string }
+              - { label: "Check-out (es. entro le 10:30)", name: check_out, widget: string }
+          - label: "Contatti"
+            name: contatti
+            widget: object
+            fields:
+              - label: "Persone"
+                name: persone
+                widget: list
+                summary: "{{fields.nome}} {{fields.cognome}}"
+                fields:
+                  - { label: "Nome", name: nome, widget: string }
+                  - { label: "Cognome", name: cognome, widget: string }
+                  - { label: "Telefono (con +39)", name: telefono, widget: string }
+              - { label: "Email", name: email, widget: string }
+          - label: "Camere"
+            name: camere
+            widget: list
+            summary: "{{fields.nome}}"
+            fields:
+              - { label: "Nome camera", name: nome, widget: string }
+              - { label: "Nome in inglese", name: nome_en, widget: string, required: false }
+              - { label: "Nome in spagnolo", name: nome_es, widget: string, required: false }
+              - { label: "Descrizione", name: descrizione, widget: text }
+              - { label: "Descrizione in inglese", name: descrizione_en, widget: text, required: false }
+              - { label: "Descrizione in spagnolo", name: descrizione_es, widget: text, required: false }
+              - { label: "Ospiti", name: ospiti, widget: number, value_type: int, default: 2, min: 1, max: 4 }
+              - label: "Foto della camera (la prima è la principale)"
+                name: foto
+                widget: list
+                summary: "{{fields.didascalia}}"
+                fields:
+                  - { label: "Foto", name: immagine, widget: image }
+                  - { label: "Didascalia", name: didascalia, widget: string, required: false }
+          - label: "Galleria fotografica"
+            name: galleria
+            widget: list
+            summary: "{{fields.didascalia}}"
+            hint: "Le prime 6 si vedono nella pagina, le altre aprendo la galleria. Trascina per cambiare l'ordine."
+            fields:
+              - { label: "Foto", name: immagine, widget: image }
+              - { label: "Didascalia", name: didascalia, widget: string, required: false }
+          - label: "Dintorni"
+            name: dintorni
+            widget: list
+            summary: "{{fields.nome}} · {{fields.tempo}}"
+            fields:
+              - { label: "Luogo", name: nome, widget: string }
+              - { label: "Foto", name: immagine, widget: image }
+              - { label: "Distanza (es. 20 min in auto)", name: tempo, widget: string }
+              - { label: "Distanza in inglese", name: tempo_en, widget: string, required: false }
+              - { label: "Distanza in spagnolo", name: tempo_es, widget: string, required: false }
+              - { label: "Descrizione", name: descrizione, widget: text }
+              - { label: "Descrizione in inglese", name: descrizione_en, widget: text, required: false }
+              - { label: "Descrizione in spagnolo", name: descrizione_es, widget: text, required: false }
+          - label: "Foto dei sentieri dei Casciani"
+            name: sentieri_foto
+            widget: list
+            summary: "{{fields.didascalia}}"
+            fields:
+              - { label: "Foto", name: immagine, widget: image }
+              - { label: "Didascalia", name: didascalia, widget: string, required: false }

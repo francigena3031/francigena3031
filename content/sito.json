@@ -1,0 +1,256 @@
+{
+  "home": {
+    "foto_principale": "/img/salotto.jpg",
+    "foto_colazione": "/img/sala-colazione.jpg",
+    "foto_salotto": "/img/salotto.jpg"
+  },
+  "prezzo_da": 80,
+  "info": {
+    "indirizzo": "[Via —]",
+    "cin": "[—]",
+    "check_in": "[—]",
+    "check_out": "[—]"
+  },
+  "contatti": {
+    "persone": [
+      {
+        "nome": "Rachele",
+        "cognome": "Butini",
+        "telefono": "+39 334 861 6073"
+      },
+      {
+        "nome": "Giacomo",
+        "cognome": "Guerrieri",
+        "telefono": "+39 392 295 6654"
+      }
+    ],
+    "email": "info@francigena3031.it"
+  },
+  "camere": [
+    {
+      "nome": "Camera con vista",
+      "nome_en": "Room with a view",
+      "nome_es": "Habitación con vistas",
+      "descrizione": "Letto matrimoniale, travi bianche a vista e porta finestra affacciata sulla campagna. Bagno privato con doppio lavabo.",
+      "descrizione_en": "Double bed, exposed white beams and a French window overlooking the countryside. Private bathroom with double washbasin.",
+      "descrizione_es": "Cama de matrimonio, vigas blancas a la vista y puerta ventana con vistas al campo. Baño privado con doble lavabo.",
+      "ospiti": 2,
+      "foto": [
+        {
+          "immagine": "/img/camera-vista-2.jpg",
+          "didascalia": "La camera"
+        },
+        {
+          "immagine": "/img/camera-vista-1.jpg",
+          "didascalia": "La camera"
+        },
+        {
+          "immagine": "/img/bagno-vista-1.jpg",
+          "didascalia": "Il bagno"
+        },
+        {
+          "immagine": "/img/bagno-vista-2.jpg",
+          "didascalia": "Il bagno"
+        }
+      ]
+    },
+    {
+      "nome": "Camera con cabina armadio",
+      "nome_en": "Room with walk-in wardrobe",
+      "nome_es": "Habitación con vestidor",
+      "descrizione": "Letto matrimoniale, carta da parati a righe e cabina armadio. Bagno privato con finestra e doccia.",
+      "descrizione_en": "Double bed, striped wallpaper and walk-in wardrobe. Private bathroom with window and shower.",
+      "descrizione_es": "Cama de matrimonio, papel pintado de rayas y vestidor. Baño privado con ventana y ducha.",
+      "ospiti": 2,
+      "foto": [
+        {
+          "immagine": "/img/camera-righe.jpg",
+          "didascalia": "La camera"
+        },
+        {
+          "immagine": "/img/cabina-armadio.jpg",
+          "didascalia": "La cabina armadio"
+        },
+        {
+          "immagine": "/img/bagno-righe.jpg",
+          "didascalia": "Il bagno"
+        }
+      ]
+    },
+    {
+      "nome": "Camera con volta in pietra",
+      "nome_en": "Room with stone vault",
+      "nome_es": "Habitación con bóveda de piedra",
+      "descrizione": "Volta in mattoni e muro in pietra originale, letto matrimoniale. Bagno privato con soffitto a volta.",
+      "descrizione_en": "Brick vault and original stone wall, double bed. Private bathroom with vaulted ceiling.",
+      "descrizione_es": "Bóveda de ladrillo y muro de piedra original, cama de matrimonio. Baño privado con techo abovedado.",
+      "ospiti": 2,
+      "foto": [
+        {
+          "immagine": "/img/camera-volta.jpg",
+          "didascalia": "La camera"
+        },
+        {
+          "immagine": "/img/bagno-volta.jpg",
+          "didascalia": "Il bagno"
+        }
+      ]
+    },
+    {
+      "nome": "Camera affrescata",
+      "nome_en": "Frescoed room",
+      "nome_es": "Habitación con frescos",
+      "descrizione": "Soffitto con decorazioni dipinte, finestra sul verde, bollitore per tè e tisane. Bagno privato con doccia.",
+      "descrizione_en": "Hand-painted ceiling decorations, window onto greenery, kettle for tea and infusions. Private bathroom with shower.",
+      "descrizione_es": "Techo con decoraciones pintadas, ventana a la vegetación, hervidor para té e infusiones. Baño privado con ducha.",
+      "ospiti": 2,
+      "foto": [
+        {
+          "immagine": "/img/camera-affrescata.jpg",
+          "didascalia": "La camera"
+        },
+        {
+          "immagine": "/img/bagno-affrescata.jpg",
+          "didascalia": "Il bagno"
+        }
+      ]
+    },
+    {
+      "nome": "Camera verde",
+      "nome_en": "Green room",
+      "nome_es": "Habitación verde",
+      "descrizione": "Testiera verde salvia, travi bianche e luce calda. Bagno privato con doppio lavabo.",
+      "descrizione_en": "Sage-green headboard, white beams and warm light. Private bathroom with double washbasin.",
+      "descrizione_es": "Cabecero verde salvia, vigas blancas y luz cálida. Baño privado con doble lavabo.",
+      "ospiti": 2,
+      "foto": [
+        {
+          "immagine": "/img/camera-verde.jpg",
+          "didascalia": "La camera"
+        },
+        {
+          "immagine": "/img/bagno-verde.jpg",
+          "didascalia": "Il bagno"
+        }
+      ]
+    }
+  ],
+  "galleria": [
+    {
+      "immagine": "/img/salotto.jpg",
+      "didascalia": "Il salotto"
+    },
+    {
+      "immagine": "/img/sala-colazione.jpg",
+      "didascalia": "La sala colazione"
+    },
+    {
+      "immagine": "/img/camera-vista-2.jpg",
+      "didascalia": "Camera con vista"
+    },
+    {
+      "immagine": "/img/camera-volta.jpg",
+      "didascalia": "Camera con volta in pietra"
+    },
+    {
+      "immagine": "/img/bagno-volta.jpg",
+      "didascalia": "Il bagno"
+    },
+    {
+      "immagine": "/img/vista-tetti.jpg",
+      "didascalia": "I tetti di Gambassi"
+    },
+    {
+      "immagine": "/img/camera-vista-1.jpg",
+      "didascalia": "Camera con vista"
+    },
+    {
+      "immagine": "/img/bagno-vista-1.jpg",
+      "didascalia": "Il bagno"
+    },
+    {
+      "immagine": "/img/camera-righe.jpg",
+      "didascalia": "Camera con cabina armadio"
+    },
+    {
+      "immagine": "/img/cabina-armadio.jpg",
+      "didascalia": "La cabina armadio"
+    },
+    {
+      "immagine": "/img/bagno-righe.jpg",
+      "didascalia": "Il bagno"
+    },
+    {
+      "immagine": "/img/camera-affrescata.jpg",
+      "didascalia": "Camera affrescata"
+    },
+    {
+      "immagine": "/img/bagno-affrescata.jpg",
+      "didascalia": "Il bagno"
+    },
+    {
+      "immagine": "/img/camera-verde.jpg",
+      "didascalia": "Camera verde"
+    },
+    {
+      "immagine": "/img/bagno-verde.jpg",
+      "didascalia": "Il bagno"
+    },
+    {
+      "immagine": "/img/bagno-vista-2.jpg",
+      "didascalia": "Il bagno"
+    }
+  ],
+  "dintorni": [
+    {
+      "nome": "Pieve di Chianni",
+      "immagine": "/img/pieve-chianni.jpg",
+      "tempo": "A piedi dal centro",
+      "descrizione": "Pieve romanica in arenaria dorata, tappa XX di Sigerico."
+    },
+    {
+      "nome": "San Gimignano",
+      "immagine": "/img/dintorni-san-gimignano.jpg",
+      "tempo": "20 min in auto",
+      "descrizione": "Le torri medievali, la tappa successiva della Francigena."
+    },
+    {
+      "nome": "Volterra",
+      "immagine": "/img/dintorni-volterra.jpg",
+      "tempo": "30 min in auto",
+      "descrizione": "La città etrusca dell'alabastro, sulle colline."
+    },
+    {
+      "nome": "Siena",
+      "immagine": "/img/dintorni-siena.jpg",
+      "tempo": "circa 1 h in auto",
+      "descrizione": "Piazza del Campo e la Torre del Mangia."
+    },
+    {
+      "nome": "Firenze",
+      "immagine": "/img/dintorni-firenze.jpg",
+      "tempo": "circa 1 h in auto",
+      "descrizione": "Il Duomo di Brunelleschi e gli Uffizi."
+    },
+    {
+      "nome": "Pisa",
+      "immagine": "/img/dintorni-pisa.jpg",
+      "tempo": "circa 1 h in auto",
+      "descrizione": "Piazza dei Miracoli e la Torre pendente."
+    }
+  ],
+  "sentieri_foto": [
+    {
+      "immagine": "/img/casciani-cascata.jpg",
+      "didascalia": "Lungo i sentieri"
+    },
+    {
+      "immagine": "/img/casciani-bollori.jpg",
+      "didascalia": "Il geyser dei Bollori"
+    },
+    {
+      "immagine": "/img/casciani-torrente.jpg",
+      "didascalia": "Il torrente Casciani"
+    }
+  ]
+}

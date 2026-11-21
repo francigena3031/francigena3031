@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Francigena 30, 31 · B&amp;B a Gambassi Terme sulla Via Francigena</title>
+<meta name="description" content="B&amp;B nel centro di Gambassi Terme, tra la tappa 30 e la tappa 31 della Via Francigena. Camere doppie con bagno privato, Wi-Fi gratuito.">
+<meta property="og:title" content="Francigena 30, 31 · Gambassi Terme">
+<meta property="og:image" content="/img/salotto.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%239a7b45'/%3E%3Ctext x='16' y='22' font-size='14' text-anchor='middle' fill='white' font-family='Georgia'%3E30%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Sul modello del Grand Hotel Baglioni: foto a tutto schermo con logo centrato e titolo in basso a sinistra, testata che diventa bianca allo scorrimento, sezioni a due colonne con titolo serif e link SCOPRI sottolineato. Bianco e grigio chiaro, accento oro. Stile fisso. */
+:root{
+  --paper:#ffffff; --mist:#f5f5f5; --ink:#2b2b2b; --soft:#555; --gold:#9a7b45; --line:#e2e2e2; --shade:#2d3036;
+  --serif:"Playfair Display",Georgia,serif; --sans:"Montserrat",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.75}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.w{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.kicker{font:500 12px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,3.6vw,40px);line-height:1.2}
+.scopri{display:inline-block;font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:2px}
+.ph{display:flex;align-items:center;justify-content:center;background:#e9e9e9;color:#8a8a8a;font:500 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;max-width:100%}
+.ph span{border:1px solid #c9c9c9;padding:6px 12px}
+
+/* testata */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+.head{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:40;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
+.head-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:150px;transition:height .3s}
+.head-l,.head-r{display:flex;align-items:center;gap:44px;font:700 13px var(--sans);letter-spacing:.04em;text-transform:uppercase}
+.head-r{justify-content:flex-end;gap:120px}
+.burger{display:flex;align-items:center;gap:14px;font:600 13px var(--sans);letter-spacing:.04em;text-transform:uppercase}
+.burger i{display:flex;flex-direction:column;gap:5px;width:40px}
+.burger i b{height:1.5px;background:currentColor}
+.logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+.logo svg{width:40px;height:40px}
+.logo strong{font:500 30px var(--sans);letter-spacing:.24em;margin-top:12px;padding-left:.24em}
+.logo small{font:400 15px var(--serif);letter-spacing:.3em;margin-top:8px;padding-left:.3em}
+.book-btn{border:1.5px solid currentColor;padding:12px 56px;font:700 13px var(--sans);text-transform:uppercase}
+.head.solid{background:var(--paper);color:var(--ink);box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.head.solid .head-in{height:78px}
+.head.solid .logo strong,.head.solid .logo small{display:none}
+.head.solid .book-btn{color:var(--gold);border-color:var(--gold)}
+
+/* menu */
+.overlay{position:fixed;inset:0;z-index:70;background:var(--paper);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:80px max(32px,env(safe-area-inset-right,0px)) 40px max(32px,env(safe-area-inset-left,0px))}
+.overlay[hidden]{display:none}
+.overlay nav{display:flex;flex-direction:column;gap:4px;justify-self:center}
+.overlay nav a{font:400 clamp(28px,3.6vw,40px)/1.35 var(--serif)}
+.overlay nav a:hover{color:var(--gold)}
+.overlay aside{justify-self:center;max-width:300px;font-size:15px;color:var(--soft)}
+.overlay .close{position:absolute;top:calc(36px + env(safe-area-inset-top,0px));left:max(32px,env(safe-area-inset-left,0px));font:700 13px var(--sans);letter-spacing:.06em;text-transform:uppercase}
+
+/* hero */
+.hero{position:relative;height:100vh;min-height:620px;max-height:960px;color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,0) 22%),url('/img/salotto.jpg') center 35%/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.hero-img span{font:500 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:6px 12px;color:rgba(255,255,255,.8)}
+.hero-txt{position:relative;padding-bottom:16vh}
+.hero-sub{text-align:center;padding:34px 16px 6px;background:var(--paper)}
+.hero-sub h1{font:400 clamp(22px,2.6vw,32px)/1.3 var(--serif);letter-spacing:.06em;color:var(--ink);margin:0}
+.hero-sub h1 span{color:var(--gold);margin:0 .3em}
+.hero .kicker{color:#fff}
+.hero h1{font-size:clamp(46px,7vw,92px);line-height:1;margin-top:14px;max-width:14ch}
+
+/* barra prenotazione */
+.book{border-bottom:1px solid var(--line)}
+.book form{display:grid;grid-template-columns:repeat(3,1fr) auto;align-items:end;gap:28px;padding-block:34px}
+.book label{display:flex;flex-direction:column;gap:6px;font:600 11px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--soft);min-width:0}
+.book input,.book select{border:0;border-bottom:1px solid var(--ink);font:400 18px var(--serif);color:var(--ink);background:none;padding:6px 0;width:100%;outline:none}
+.book .go{background:var(--gold);color:#fff;padding:16px 40px;font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.book p{grid-column:1/-1;margin:-10px 0 0;font:500 12px var(--sans);color:var(--soft)}
+.book p b{color:var(--gold)}
+
+/* intro */
+.intro{padding:130px 0 110px}
+.intro .w{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.intro p{margin:0 0 18px;color:var(--soft)}
+
+/* camere: come "Rooms & Suites" */
+.rooms{background:var(--mist);position:relative}
+.rooms::after{content:"";position:absolute;right:0;top:0;bottom:0;width:20%;background:var(--paper)}
+.rooms .w{position:relative;z-index:1;display:grid;grid-template-columns:.75fr 1.5fr;gap:64px;align-items:center;padding-block:0}
+.rooms-txt{display:flex;flex-direction:column;padding:80px 0;align-self:stretch}
+.rooms-txt .room{margin-top:auto}
+.room h3{font-size:36px;line-height:1.2;color:var(--gold);margin:8px 0 18px}
+.room p{margin:0 0 22px;color:var(--soft)}
+.room .meta{display:flex;gap:30px;font:500 12px var(--sans);letter-spacing:.06em;color:var(--soft);margin-bottom:22px;flex-wrap:wrap}
+.room .meta b{display:block;font:400 22px var(--serif);color:var(--ink);letter-spacing:0}
+.pager{margin-top:auto;padding-top:60px;display:flex;gap:28px;font:500 13px var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.pager button{letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.pager button:hover{color:var(--ink)}
+.rooms-media{margin:80px 0}.rooms-img{position:relative;margin:0;aspect-ratio:16/9;width:100%}
+.pnav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.9);font:300 30px/1 var(--sans);color:var(--ink);z-index:2}.pnav.l{left:14px}.pnav.r{right:14px}.pnav[hidden]{display:none}
+.thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}.th{width:96px;aspect-ratio:16/9;background:center/cover no-repeat;border:2px solid transparent;opacity:.65;cursor:pointer;padding:0}.th.on{border-color:var(--gold);opacity:1}.th:hover{opacity:1}.th-empty{font:500 12px var(--sans);color:var(--soft);letter-spacing:.06em}
+.rooms-img .ph{position:absolute;inset:0}
+.plus{position:absolute;top:22px;right:22px;width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font:300 34px var(--sans);color:var(--soft);z-index:2}
+
+/* sezioni a due colonne + coppia di foto (come "Restaurants & Bar") */
+.pair{padding:150px 0 40px}
+.pair-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:90px}
+.pair-head p{margin:0 0 14px;color:var(--soft)}
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pair-grid .ph{aspect-ratio:16/9}
+.ph[data-img]{background:#e9e9e9 center/cover no-repeat}
+.pair-grid h3{font-size:30px;margin:26px 0 8px}
+.pair-grid p{margin:0 0 14px;color:var(--soft);font-size:16px}
+
+/* pellegrini */
+.walk{padding:140px 0}
+.walk-box{background:var(--mist);padding:70px 60px;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.walk-box p{color:var(--soft);margin:0 0 14px}
+.legs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.legs div{padding:20px 14px 0 0}
+.legs b{display:block;font:400 48px/1 var(--serif);color:var(--gold)}
+.legs span{display:block;margin-top:8px;font:600 11px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:80px 0 40px;font:400 14px/1.8 var(--sans);color:var(--soft)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+.foot .logo{align-items:flex-start;color:var(--ink)}
+.foot .logo strong{font-size:20px;padding-left:0}
+.foot h4{font:700 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin:0 0 10px}
+.foot p{margin:0}
+.foot-b{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* chat come nel Baglioni */
+.chip{position:fixed;right:max(24px,calc(env(safe-area-inset-right,0px) + 16px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:30;background:#fff;border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.15);padding:14px 22px;font:700 14px var(--sans);display:flex;gap:12px;align-items:center}
+
+@media (max-width:1000px){
+  .head-in{height:96px}
+  .head-l span.tag,.head-r .lang{display:none}
+  .head-r{gap:0}
+  .book-btn{padding:10px 18px;font-size:11px}
+  .logo strong{font-size:20px}.logo small{font-size:11px}.logo svg{width:30px;height:30px}
+  .burger span{display:none}
+  .intro .w,.pair-head,.walk-box,.foot-grid,.overlay{grid-template-columns:1fr;gap:32px}
+  .rooms::after{display:none}
+  .rooms .w{grid-template-columns:1fr;gap:0}
+  .rooms-txt{padding:70px 0 30px}
+  .rooms-media{margin:0 0 60px}
+  .pager{padding-top:30px}
+  .book form{grid-template-columns:1fr 1fr}
+  .book .go{grid-column:1/-1}
+  .pair{padding:90px 0 20px}
+  .pair-head{margin-bottom:40px}
+  .walk{padding:90px 0}
+  .walk-box{padding:40px 24px}
+  .intro{padding:80px 0}
+}
+@media (max-width:560px){
+  .pair-grid{grid-template-columns:1fr}
+  .book form{grid-template-columns:1fr}
+  .chip{display:none}
+  .legs b{font-size:36px}
+}
+
+.galpage{position:fixed;inset:0;z-index:80;background:#fff;overflow-y:auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.galpage[hidden],.galbig[hidden]{display:none}
+.galbar{position:sticky;top:0;background:#fff;display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin:0 auto;padding:calc(24px + env(safe-area-inset-top,0px)) 0 24px;border-bottom:1px solid #e5e5e5;z-index:2}
+.galbar strong{font:400 34px "Playfair Display",serif;color:#2b2b2b}
+.galbar button{background:none;border:0;cursor:pointer;font:600 12px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#333}
+.galgrid{max-width:1180px;margin:28px auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.gal-item{aspect-ratio:16/9;border:0;padding:0;background:#ececec center/cover no-repeat;position:relative;cursor:zoom-in;display:flex;align-items:flex-end;justify-content:flex-start}
+.gal-item span{background:rgba(255,255,255,.92);color:#333;font:500 12px system-ui,sans-serif;letter-spacing:.06em;padding:6px 10px;margin:10px}
+.gal-empty{cursor:default;align-items:center;justify-content:center}.gal-empty span{background:none;color:#999;border:1px solid #ccc}
+.galbig{position:fixed;inset:0;z-index:90;background:rgba(15,15,15,.95);display:flex;align-items:center;justify-content:center;gap:8px;padding:24px}
+.galbig figure{flex:1;max-width:1300px;margin:0;display:flex;flex-direction:column;align-items:center}
+.gb-img{width:100%;height:80vh;background:center/contain no-repeat}
+.galbig figcaption{color:#ddd;font:400 14px system-ui,sans-serif;margin-top:10px}
+.galbig button{background:none;border:0;color:#fff;font-size:42px;cursor:pointer;padding:8px}
+.gb-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(18px,env(safe-area-inset-right,0px));font-size:28px!important}
+.galcta{padding:20px 0 0}.galcta-in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:44px}.galcta p{margin:6px 0 0;color:var(--soft)}.galbtn{border:1.5px solid var(--ink);padding:16px 34px;font:700 12px var(--sans);letter-spacing:.16em;text-transform:uppercase}.galbtn:hover{background:var(--ink);color:#fff}
+.galgrid-inline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}@media (max-width:700px){.galgrid-inline{grid-template-columns:1fr 1fr;gap:8px}.galgrid-inline .gal-item span{font-size:10px;padding:4px 6px;margin:6px}}
+.langsw{display:inline-flex;gap:2px}.langsw button{font:700 13px var(--sans);letter-spacing:.06em;padding:4px 6px;opacity:.55;color:inherit;border-bottom:1.5px solid transparent}.langsw button.on{opacity:1;border-bottom-color:currentColor}.overlay .langsw button{font-size:16px;padding:6px 10px}
+
+.bb-s{display:none}
+@media (max-width:1000px){.head-l .tag{display:none}}
+@media (max-width:700px){
+  .head-in{grid-template-columns:auto 1fr auto;height:84px;gap:8px}
+  .head.solid .head-in{height:64px}
+  .head-l{gap:10px}
+  .head-r .lang{display:inline-flex}
+  .head-r{gap:6px}
+  .head-r .langsw button{font-size:11px;padding:3px 3px;letter-spacing:.02em}
+  .logo strong{font-size:13px;letter-spacing:.14em;margin-top:6px;padding-left:.14em}
+  .logo small{font-size:10px;margin-top:4px}
+  .logo svg{width:26px;height:26px}
+  .burger i{width:28px}
+  .book-btn{padding:9px 12px;font-size:10.5px;letter-spacing:.08em}
+  .bb-l{display:none}.bb-s{display:inline}
+  .hero{height:86svh;min-height:520px}
+  .hero-sub{padding:26px 16px 0}
+  .pager{gap:18px}
+  .rooms-media{margin-bottom:40px}
+  .overlay{padding-top:90px;align-content:start}
+}
+@media (max-width:380px){.legs span{font-size:10px;letter-spacing:.04em}.legs div{min-width:0;padding-right:8px}.head-r .lang{display:none}.room h3{font-size:30px}}
+@media (max-width:700px){.thumbs{display:grid!important;grid-template-columns:repeat(4,1fr);gap:8px}.thumbs .th{width:auto!important;height:auto!important;aspect-ratio:16/9}}
+.contacts a{border-bottom:1px solid var(--line)}.contacts a:hover{color:var(--gold)}
+.dist{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}.dist li{padding:20px 12px 0 0}.dist b{display:block;font:400 34px/1 var(--serif);color:var(--gold)}.dist span{display:block;margin-top:8px;font:600 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}.dist-note{font:400 13px var(--sans);color:var(--soft);margin-top:14px}@media (max-width:700px){.dist{grid-template-columns:repeat(3,1fr);row-gap:18px}.dist b{font-size:26px}}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px}.dgrid .ph{aspect-ratio:16/9;background:#e9e9e9 center/cover no-repeat}.dtime{display:block;margin-top:18px;font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}.dgrid h3{font-size:26px;margin:6px 0 6px}.dgrid p{margin:0;color:var(--soft);font-size:15px;line-height:1.6}@media (max-width:1000px){.dgrid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.dgrid{grid-template-columns:1fr;gap:32px}}
+.trail{margin-top:56px;padding:40px;background:var(--mist);display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:start}.trail h3{font-size:30px;margin-top:6px}.trail p{margin:0 0 16px;color:var(--soft);font-size:16px}@media (max-width:700px){.trail{grid-template-columns:1fr;gap:12px;padding:28px 20px}}
+.trail-pics{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}.trail-pics figure{margin:0}.trail-pics .ph{aspect-ratio:4/3;background:#e9e9e9 center/cover no-repeat}.trail-pics figcaption{font:500 12px var(--sans);color:var(--soft);margin-top:8px}@media (max-width:560px){.trail-pics{grid-template-columns:1fr 1fr}.trail-pics figure:first-child{grid-column:1/-1}}
+@media (max-width:1560px) and (min-width:1001px){.logo strong{font-size:22px}.head-r{gap:36px}.head-l{gap:28px}.book-btn{padding:12px 28px;white-space:nowrap}}
+
+.talk{padding:110px 0;background:var(--mist)}.talk-in{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}.talk-h h2{margin:10px 0 14px}.talk-h p{color:var(--soft);margin:0}
+.talk-p{display:grid;grid-template-columns:1fr 1fr;gap:16px}.talk .pc{background:#fff;padding:24px;border:1px solid var(--line)}.talk .pc-mail{grid-column:1/-1}
+.pc strong{display:block;font:400 24px var(--serif)}.pc-n{display:block;font:500 13px var(--sans);color:var(--soft);margin:4px 0 16px}.pc-b{display:flex;flex-wrap:wrap;gap:8px}
+.cbtn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);padding:10px 14px;font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:#fff}.cbtn svg{width:17px;height:17px}.cbtn:hover{background:var(--ink);color:#fff}.cbtn.wa{background:var(--gold);border-color:var(--gold);color:#fff}.cbtn.wa:hover{background:#7d6337;border-color:#7d6337}
+.fab{position:fixed;right:max(20px,calc(env(safe-area-inset-right,0px) + 14px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:35;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.fab-btn{display:flex;align-items:center;gap:10px;background:var(--gold);color:#fff;border-radius:999px;padding:14px 22px;font:700 14px var(--sans);box-shadow:0 6px 24px rgba(0,0,0,.2)}.fab-btn svg{width:20px;height:20px}
+.fab-panel{width:min(340px,calc(100vw - 32px));max-height:calc(100vh - 120px);overflow:auto;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.2);padding:20px}.fab-panel[hidden]{display:none}.fab-t{font:400 22px var(--serif);margin:0 0 6px}
+.fab-panel .pc{padding:14px 0;border-bottom:1px solid var(--line)}.fab-panel .pc strong{font-size:19px}.fab-panel .pc-n{margin-bottom:10px}.fab-panel .cbtn{padding:8px 10px;font-size:10px}
+.fab-book{display:block;margin-top:14px;font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+@media (max-width:1000px){.talk-in{grid-template-columns:1fr;gap:30px}.talk{padding:80px 0}}
+@media (max-width:560px){.talk-p{grid-template-columns:1fr}.fab-btn{padding:14px}.fab-btn span{display:none}.fab-btn svg{width:24px;height:24px}}
+.fab-btn svg.glass{width:24px;height:24px}.fab-panel .pc-b{flex-wrap:nowrap}.book-btn{white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="head" id="head">
+  <div class="w head-in">
+    <div class="head-l"><button class="burger" id="openMenu" aria-expanded="false"><i><b></b><b></b><b></b></i><span>Menu</span></button><a href="#" data-open-gallery class="tag">Galleria</a></div>
+    <a href="#top" class="logo" aria-label="Francigena 30, 31">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 35 5 15c5-9 25-9 30 0Z"/><path d="M20 35 11 10M20 35l-3-27M20 35l3-27M20 35l9-25M20 35 7 13M20 35l13-22"/><path d="M15 35h10"/></svg>
+      <strong>FRANCIGENA</strong><small>30 · 31</small>
+    </a>
+    <div class="head-r"><span class="lang"><span class="langsw"><button data-lang="it">IT</button><button data-lang="en">EN</button><button data-lang="es">ES</button></span></span><a href="#prenota" class="book-btn"><span class="bb-l">Prenota ora</span><span class="bb-s">Prenota</span></a></div>
+  </div>
+</header>
+
+<div class="overlay" id="menu" hidden>
+  <button class="close" id="closeMenu">✕ Chiudi</button>
+  <nav><a href="#top">Home</a><a href="#camere">Camere</a><a href="#casa">Gli interni</a><a href="#cammino">Il cammino</a><a href="#" data-open-gallery>Galleria</a><a href="#dintorni">Dintorni</a><a href="#scrivici">Scrivici</a><a href="#contatti">Dove siamo e contatti</a></nav>
+  <aside><span class="langsw"><button data-lang="it">IT</button><button data-lang="en">EN</button><button data-lang="es">ES</button></span><p class="kicker" style="margin-top:24px">Francigena 30, 31</p><p><span data-f="indirizzo">[Via —]</span>, 50050 Gambassi Terme (FI)</p><p class="contacts" data-contacts>Rachele Butini<br><a href="tel:+393348616073">+39 334 861 6073</a> · <a href="https://wa.me/393348616073" target="_blank" rel="noopener">WhatsApp</a><br>Giacomo Guerrieri<br><a href="tel:+393922956654">+39 392 295 6654</a> · <a href="https://wa.me/393922956654" target="_blank" rel="noopener">WhatsApp</a><br><a href="mailto:info@francigena3031.it">info@francigena3031.it</a></p></aside>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-img" role="img" aria-label="Il salotto con il soffitto affrescato e la vista sui tetti di Gambassi"></div>
+  </section>
+  <div class="hero-sub"><h1>Francigena <span>·</span> Gambassi Terme</h1></div>
+
+  <section class="book" id="prenota">
+    <form class="w" id="bookForm">
+      <label for="ci">Arrivo<input id="ci" type="date" required></label>
+      <label for="co">Partenza<input id="co" type="date" required></label>
+      <label for="ad">Ospiti<select id="ad"><option>1</option><option selected>2</option></select></label>
+      <button class="go" type="submit">Verifica disponibilità</button>
+      <p id="bookMsg"><b>Miglior tariffa garantita</b> prenotando sul sito · disponibilità allineata con Booking.com [in arrivo]</p>
+    </form>
+  </section>
+
+  <section class="intro">
+    <div class="w">
+      <h2>Dove una tappa della Via Francigena finisce e l'altra comincia</h2>
+      <div>
+        <p>Gambassi Terme è l'arrivo della tappa 30, da San Miniato, e la partenza della tappa 31, verso San Gimignano. Il nostro B&amp;B è nel centro del paese, con una decina di camere per pellegrini e viaggiatori.</p>
+        <p>Un edificio storico nel cuore del paese, restaurato con cura: soffitti affrescati, travi a vista, volte in mattoni e pavimenti in cotto. Vi accolgono Rachele e Giacomo.</p>
+        <a href="#casa" class="scopri">Scopri</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms" id="camere">
+    <div class="w">
+      <div class="rooms-txt">
+        <h2>Le camere doppie</h2>
+        <div class="room">
+          <span class="kicker">Camera</span>
+          <h3 id="rName">Camera con vista</h3>
+          <p id="rDesc">Letto matrimoniale, travi bianche a vista e porta finestra affacciata sulla campagna. Bagno privato con doppio lavabo.</p>
+          <div class="meta"><span><b id="rG">2</b>ospiti</span><span><b>Wi‑Fi</b>gratuito</span><span><b data-prezzo>€ 80</b>a notte da</span></div>
+          <a href="#prenota" class="scopri">Scopri</a>
+        </div>
+        <div class="pager"><button id="prev">Prev</button><button id="next">Next</button><span id="count">1/5</span></div>
+      </div>
+      <div class="rooms-media"><figure class="rooms-img"><div class="ph" id="rPh" role="img" aria-label="Camera"></div><button class="pnav l" id="pPrev" aria-label="Foto precedente">‹</button><button class="pnav r" id="pNext" aria-label="Foto successiva">›</button></figure><div class="thumbs" id="rThumbs"></div></div>
+    </div>
+  </section>
+
+  <section class="pair" id="casa">
+    <div class="w">
+      <div class="pair-head">
+        <h2>Dentro Francigena 30, 31</h2>
+        <div><p>Nel centro di Gambassi Terme, a pochi passi dalla piazza. Un edificio antico dove soffitti dipinti e travi in legno convivono con arredi semplici e luminosi: una sala per la colazione, un salotto con vista sui tetti e camere doppie, tutte con bagno privato.</p><a href="#" data-open-gallery class="scopri">Scopri</a></div>
+      </div>
+      <div class="pair-grid" id="galleria">
+        <div><div class="ph" data-img="sala-colazione" role="img" aria-label="La sala colazione"></div><h3>La colazione</h3><p>Al mattino, nella sala con il soffitto a travi e il pavimento in cotto, attorno a un grande tavolo in legno. Il modo giusto per partire verso la tappa del giorno.</p><a href="#" class="scopri">Scopri</a></div>
+        <div><div class="ph" data-img="salotto" role="img" aria-label="Il salotto affrescato"></div><h3>Il salotto</h3><p>Il salotto con il soffitto affrescato e la finestra sul campanile: un angolo tranquillo per leggere o riposare dopo il cammino.</p><a href="#" data-open-gallery class="scopri">Galleria</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="galcta" id="foto">
+    <div class="w galcta-in">
+      <div><span class="kicker">Galleria</span><h2 style="margin-top:10px">Galleria fotografica</h2><p>Camere, bagni, salotto e spazi comuni.</p></div>
+      <a href="#" data-open-gallery class="galbtn">Apri la galleria →</a>
+      <div class="galgrid-inline" style="flex-basis:100%"></div>
+    </div>
+  </section>
+
+  <section class="walk" id="cammino">
+    <div class="w">
+      <div class="walk-box">
+        <div><span class="kicker">Via Francigena</span><h2 style="margin-top:10px">Ospitalità per pellegrini</h2></div>
+        <div>
+          <p>La Via Francigena segue il diario di Sigerico, arcivescovo di Canterbury, che alla fine del X secolo tornò da Roma annotando le sue soste. Oggi attraversa pievi, borghi e campagne, in parte su strada e in parte sui vecchi tracciati tra i campi.</p>
+          <p>Timbro sulla credenziale, Wi‑Fi gratuito e un letto comodo a metà strada tra San Miniato e San Gimignano.</p>
+          <div class="legs"><div><b>30</b><span>San Miniato → Gambassi</span></div><div><b>★</b><span>Francigena 30, 31</span></div><div><b>31</b><span>Gambassi → San Gimignano</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pair" id="dintorni" style="padding-top:20px;padding-bottom:140px">
+    <div class="w">
+      <div class="pair-head">
+        <h2>Dintorni</h2>
+        <div><p>Santa Maria a Chianni, pieve romanica di inizio Duecento poco fuori dal centro, che Sigerico annotò come XX tappa del suo ritorno da Roma. E poi il vetro di Gambassi, le terme del Parco Benestare, i sentieri dei Casciani, San Gimignano e Volterra.</p><a href="#" class="scopri">Scopri</a></div>
+      </div>
+      <div class="dgrid" id="dgrid">
+        <article><div class="ph" data-dimg="pieve" role="img" aria-label="Pieve di Chianni"></div><span class="dtime">A piedi dal centro</span><h3>Pieve di Chianni</h3><p>Pieve romanica in arenaria dorata, tappa XX di Sigerico.</p></article>
+        <article><div class="ph" data-dimg="san-gimignano" role="img" aria-label="San Gimignano"></div><span class="dtime">20 min in auto</span><h3>San Gimignano</h3><p>Le torri medievali, la tappa successiva della Francigena.</p></article>
+        <article><div class="ph" data-dimg="volterra" role="img" aria-label="Volterra"></div><span class="dtime">30 min in auto</span><h3>Volterra</h3><p>La città etrusca dell'alabastro, sulle colline.</p></article>
+        <article><div class="ph" data-dimg="siena" role="img" aria-label="Siena"></div><span class="dtime">circa 1 h in auto</span><h3>Siena</h3><p>Piazza del Campo e la Torre del Mangia.</p></article>
+        <article><div class="ph" data-dimg="firenze" role="img" aria-label="Firenze"></div><span class="dtime">circa 1 h in auto</span><h3>Firenze</h3><p>Il Duomo di Brunelleschi e gli Uffizi.</p></article>
+        <article><div class="ph" data-dimg="pisa" role="img" aria-label="Pisa"></div><span class="dtime">circa 1 h in auto</span><h3>Pisa</h3><p>Piazza dei Miracoli e la Torre pendente.</p></article>
+      </div>
+      <p class="dist-note">Tempi indicativi in auto da Gambassi Terme.</p>
+      <div class="trail"><div><span class="dtime">Dal paese, a piedi</span><h3>I sentieri dei Casciani</h3></div><div><p>Cinque anelli nei boschi lungo il torrente Casciani, tra il borgo, la Via Francigena e la Via del Sale: l'acquedotto della Forra, le grotte dell'eremita Maurizio, il piccolo geyser dei Bollori, i vecchi mulini e il Rio dell'acqua calda. Da 2 a 13 km, con tracce GPX.</p><a class="scopri" href="https://www.thegambassiexperience.com/project/i-sentieri-dei-casciani/" target="_blank" rel="noopener">I percorsi</a></div><div class="trail-pics" id="trailPics"><figure><div class="ph" data-dimg="casciani-cascata" role="img" aria-label="Lungo i sentieri"></div><figcaption>Lungo i sentieri</figcaption></figure><figure><div class="ph" data-dimg="casciani-bollori" role="img" aria-label="Il geyser dei Bollori"></div><figcaption>Il geyser dei Bollori</figcaption></figure><figure><div class="ph" data-dimg="casciani-torrente" role="img" aria-label="Il torrente Casciani"></div><figcaption>Il torrente Casciani</figcaption></figure></div></div>
+    </div>
+  </section>
+  <section class="talk" id="scrivici">
+    <div class="w talk-in">
+      <div class="talk-h"><span class="kicker">Contatto diretto</span><h2>Scrivete a Rachele o Giacomo</h2><p>Per una domanda, una richiesta particolare o per prenotare senza intermediari: rispondiamo noi, di persona.</p></div>
+      <div class="talk-p" id="talkP"><div class="pc"><strong>Rachele</strong><span class="pc-n">+39 334 861 6073</span><div class="pc-b"><a class="cbtn wa" href="https://wa.me/393348616073?text=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>WhatsApp</span></a><a class="cbtn" href="sms:+393348616073?&body=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>SMS</span></a><a class="cbtn" href="tel:+393348616073"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Chiama</span></a></div></div><div class="pc"><strong>Giacomo</strong><span class="pc-n">+39 392 295 6654</span><div class="pc-b"><a class="cbtn wa" href="https://wa.me/393922956654?text=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>WhatsApp</span></a><a class="cbtn" href="sms:+393922956654?&body=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>SMS</span></a><a class="cbtn" href="tel:+393922956654"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Chiama</span></a></div></div><div class="pc pc-mail"><strong>Email</strong><span class="pc-n">info@francigena3031.it</span><div class="pc-b"><a class="cbtn mail" href="mailto:info@francigena3031.it?subject=Richiesta%20informazioni&body=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Scrivi una email</span></a></div></div></div>
+    </div>
+  </section>
+</main>
+
+
+<div class="galpage" id="gallery" hidden>
+  <div class="galbar"><strong>Galleria</strong><button id="galClose">✕ Chiudi</button></div>
+  <div class="galgrid" id="galGrid"></div>
+  <div class="galbig" id="galBig" hidden>
+    <button class="gb-close" id="galBigClose" aria-label="Chiudi foto">✕</button>
+    <button class="gb-nav" id="galPrev" aria-label="Foto precedente">‹</button>
+    <figure><div class="gb-img" id="galBigImg"></div><figcaption id="galBigCap"></figcaption></figure>
+    <button class="gb-nav" id="galNext" aria-label="Foto successiva">›</button>
+  </div>
+</div>
+<footer class="foot" id="contatti">
+  <div class="w">
+    <div class="foot-grid">
+      <div><div class="logo"><strong>FRANCIGENA 30 · 31</strong></div><p style="margin-top:14px"><span data-f="indirizzo">[Via —]</span><br>50050 Gambassi Terme (FI)</p></div>
+      <div><h4>Contatti</h4><p class="contacts" data-contacts>Rachele Butini<br><a href="tel:+393348616073">+39 334 861 6073</a> · <a href="https://wa.me/393348616073" target="_blank" rel="noopener">WhatsApp</a><br>Giacomo Guerrieri<br><a href="tel:+393922956654">+39 392 295 6654</a> · <a href="https://wa.me/393922956654" target="_blank" rel="noopener">WhatsApp</a><br><a href="mailto:info@francigena3031.it">info@francigena3031.it</a></p></div>
+      <div><h4>Info</h4><p>Check-in <span data-f="check_in">[—]</span> · Check-out <span data-f="check_out">[—]</span><br>CIN <span data-f="cin">[—]</span><br>Privacy · Cookie</p></div>
+    </div>
+    <div class="foot-b"><span>© 2026 Francigena 30, 31</span><span>Italiano · English · Español</span></div>
+  </div>
+</footer>
+
+<div class="fab" id="fab"><div class="fab-panel" id="fabPanel" hidden><p class="fab-t">Scrivici direttamente</p><div id="fabP"><div class="pc"><strong>Rachele</strong><span class="pc-n">+39 334 861 6073</span><div class="pc-b"><a class="cbtn wa" href="https://wa.me/393348616073?text=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>WhatsApp</span></a><a class="cbtn" href="sms:+393348616073?&body=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>SMS</span></a><a class="cbtn" href="tel:+393348616073"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Chiama</span></a></div></div><div class="pc"><strong>Giacomo</strong><span class="pc-n">+39 392 295 6654</span><div class="pc-b"><a class="cbtn wa" href="https://wa.me/393922956654?text=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>WhatsApp</span></a><a class="cbtn" href="sms:+393922956654?&body=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>SMS</span></a><a class="cbtn" href="tel:+393922956654"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Chiama</span></a></div></div><div class="pc"><a class="cbtn mail" href="mailto:info@francigena3031.it?subject=Richiesta%20informazioni&body=Buongiorno%2C%20vorrei%20informazioni%20per%20una%20camera%20a%20Francigena%2030%2C%2031."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Scrivi una email</span></a></div></div><a href="#prenota" class="fab-book">Verifica la disponibilità ›</a></div><button class="fab-btn" id="fabBtn" aria-expanded="false" aria-label="Scrivici"><svg viewBox="0 0 24 24" aria-hidden="true" class="glass"><path d="M4 19.5l1.4-3.9A8 8 0 1 1 8.3 18.4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><g fill="currentColor"><circle cx="8.6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="15.4" cy="12" r="1"/></g></svg><span>Scrivici</span></button></div>
+
+<script>
+const head=document.getElementById('head');
+const onScroll=()=>head.classList.toggle('solid',scrollY>80);addEventListener('scroll',onScroll,{passive:true});onScroll();
+const menu=document.getElementById('menu'),ob=document.getElementById('openMenu');
+ob.onclick=()=>{menu.hidden=false;ob.setAttribute('aria-expanded','true')};
+document.getElementById('closeMenu').onclick=()=>{menu.hidden=true;ob.setAttribute('aria-expanded','false')};
+menu.querySelectorAll('nav a').forEach(a=>a.onclick=()=>{menu.hidden=true});
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IC={wa:"<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20l1.3-3.8A8 8 0 1 1 8 19z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/></svg>",ph:"<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/></svg>",ml:"<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"5.5\" width=\"18\" height=\"13\" rx=\"1.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M3.5 6.5l8.5 6.5 8.5-6.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>"};
+const MSG=encodeURIComponent('Buongiorno, vorrei informazioni per una camera a Francigena 30, 31.');
+// ottimizza le foto con il servizio immagini di Netlify (solo online)
+const ONL=/^https?:$/.test(location.protocol)&&!/^(localhost|127\.)/.test(location.hostname);
+function im(u,w){if(!u)return '';if(!ONL||/^(data:|https?:)/.test(u))return u;return '/.netlify/images?url='+encodeURIComponent(u)+'&w='+w}
+let R=[],GAL=[];
+let i=0;
+let pi=0;function pics(r){return r.pics||(r.img?[{s:r.img,c:'Camera'}]:[])}
+function photo(j){const r=R[i],P=pics(r);const ph=$('rPh'),th=$('rThumbs');if(!P.length){ph.innerHTML='<span>'+r.p+'</span>';ph.style.background='';th.innerHTML='<span class="th-empty">Altre foto in arrivo</span>';$('pPrev').hidden=$('pNext').hidden=true;return}
+pi=(j+P.length)%P.length;ph.innerHTML='';ph.style.background='url('+P[pi].s+') center/cover no-repeat';ph.setAttribute('aria-label',P[pi].c);
+$('pPrev').hidden=$('pNext').hidden=P.length<2;
+th.innerHTML=P.map((p,n)=>'<button class="th'+(n===pi?' on':'')+'" data-n="'+n+'" style="background-image:url('+p.s+')" aria-label="'+p.c+'"></button>').join('')}
+function show(k){i=(k+R.length)%R.length;const r=R[i];$('rName').textContent=r.n;$('rDesc').textContent=r.d;$('rG').textContent=r.g;$('count').textContent=(i+1)+'/'+R.length;photo(0)}
+$('prev').onclick=()=>show(i-1);$('next').onclick=()=>show(i+1);$('pPrev').onclick=()=>photo(pi-1);$('pNext').onclick=()=>photo(pi+1);$('rThumbs').addEventListener('click',e=>{const b=e.target.closest('.th');if(b)photo(+b.dataset.n)});(function(){let x0=null;const el=$('rPh');el.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});el.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)photo(pi+(dx<0?1:-1));x0=null})})();
+const t=new Date().toISOString().slice(0,10);$('ci').min=t;$('co').min=t;
+$('bookForm').addEventListener('submit',e=>{e.preventDefault();$('bookMsg').textContent='Qui comparirà la disponibilità reale delle camere, collegata a Booking.com.'});
+
+(function(){const ov=document.getElementById('gallery'),grid=document.getElementById('galGrid'),big=document.getElementById('galBig'),bi=document.getElementById('galBigImg'),bc=document.getElementById('galBigCap');let k=0;
+window.renderGal=function(){grid.innerHTML=GAL.map((g,i)=>'<button class="gal-item" data-i="'+i+'" style="background-image:url('+g.s+')" aria-label="'+g.c+'"><span>'+g.c+'</span></button>').join('');
+function open(){ov.hidden=false;document.body.style.overflow='hidden'}function close(){ov.hidden=true;big.hidden=true;document.body.style.overflow=''}
+function show(i){k=(i+GAL.length)%GAL.length;bi.style.backgroundImage='url('+GAL[k].s+')';bc.textContent=GAL[k].c+' · '+(k+1)+'/'+GAL.length;big.hidden=false}
+document.querySelectorAll('[data-open-gallery]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const m=document.getElementById('menu');if(m)m.hidden=true;open()}));
+};grid.addEventListener('click',e=>{const b=e.target.closest('button.gal-item');if(b)show(+b.dataset.i)});
+window.renderGalInline=function(){document.querySelectorAll('.galgrid-inline').forEach(el=>{el.innerHTML=GAL.slice(0,6).map((g,i)=>'<button class="gal-item" data-i="'+i+'" style="background-image:url('+g.s+')" aria-label="'+g.c+'"><span>'+g.c+'</span></button>').join('')})};
+document.querySelectorAll('.galgrid-inline').forEach(el=>{el.addEventListener('click',e=>{const b=e.target.closest('button.gal-item');if(b){open();show(+b.dataset.i)}})});
+
+document.getElementById('galClose').onclick=close;document.getElementById('galBigClose').onclick=()=>big.hidden=true;
+document.getElementById('galPrev').onclick=()=>show(k-1);document.getElementById('galNext').onclick=()=>show(k+1);
+addEventListener('keydown',e=>{if(ov.hidden)return;if(e.key==='Escape'){big.hidden?close():big.hidden=true}if(!big.hidden&&e.key==='ArrowLeft')show(k-1);if(!big.hidden&&e.key==='ArrowRight')show(k+1)});})();
+
+
+
+function boot(C){
+ const D=window.__D||{};const T=(it,en,es)=>{if(it&&(en||es))D[it]=[en||it,es||it]};
+ const H=C.home||{};
+ if(H.foto_principale)document.querySelector('.hero-img').style.backgroundImage='linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,0) 22%),url("'+im(H.foto_principale,2000)+'")';
+ const HM={'sala-colazione':H.foto_colazione,'salotto':H.foto_salotto};
+ document.querySelectorAll('[data-img]').forEach(e=>{const u=HM[e.dataset.img];if(u)e.style.backgroundImage='url("'+im(u,1200)+'")'});
+ document.querySelectorAll('[data-prezzo]').forEach(e=>e.textContent='€ '+(C.prezzo_da||''));
+ const I=C.info||{};document.querySelectorAll('[data-f]').forEach(e=>{const v=I[e.dataset.f];if(v)e.textContent=v});
+ R=(C.camere||[]).map(r=>{T(r.nome,r.nome_en,r.nome_es);T(r.descrizione,r.descrizione_en,r.descrizione_es);return{n:r.nome||'',d:r.descrizione||'',g:String(r.ospiti||2),p:'Foto in arrivo',pics:(r.foto||[]).filter(f=>f&&f.immagine).map(f=>({s:im(f.immagine,1600),c:f.didascalia||''}))}});
+ if(R.length)show(0);document.querySelector('.pager').hidden=R.length<2;
+ GAL=(C.galleria||[]).filter(g=>g&&g.immagine).map(g=>({s:im(g.immagine,1600),c:g.didascalia||''}));renderGal();renderGalInline();
+ $('dgrid').innerHTML=(C.dintorni||[]).map(d=>{T(d.tempo,d.tempo_en,d.tempo_es);T(d.descrizione,d.descrizione_en,d.descrizione_es);return '<article><div class="ph" style="background-image:url(&quot;'+esc(im(d.immagine,1000))+'&quot;)" role="img" aria-label="'+esc(d.nome)+'"></div><span class="dtime">'+esc(d.tempo)+'</span><h3>'+esc(d.nome)+'</h3><p>'+esc(d.descrizione)+'</p></article>'}).join('');
+ const SF=(C.sentieri_foto||[]).filter(f=>f&&f.immagine);$('trailPics').innerHTML=SF.map(f=>'<figure><div class="ph" style="background-image:url(&quot;'+esc(im(f.immagine,900))+'&quot;)" role="img" aria-label="'+esc(f.didascalia)+'"></div><figcaption>'+esc(f.didascalia)+'</figcaption></figure>').join('');$('trailPics').hidden=!SF.length;
+ const K=C.contatti||{},PP=(K.persone||[]).filter(p=>p&&p.telefono),mail=K.email||'';
+ const num=p=>String(p.telefono).replace(/[^0-9]/g,'').replace(/^00/,'').replace(/^(?=3)/,'39');
+ const card=p=>{const n=num(p);return '<div class="pc"><strong>'+esc(p.nome)+'</strong><span class="pc-n">'+esc(p.telefono)+'</span><div class="pc-b"><a class="cbtn wa" href="https://wa.me/'+n+'?text='+MSG+'" target="_blank" rel="noopener">'+IC.wa+'<span>WhatsApp</span></a><a class="cbtn" href="sms:+'+n+'?&body='+MSG+'">'+IC.wa+'<span>SMS</span></a><a class="cbtn" href="tel:+'+n+'">'+IC.ph+'<span>Chiama</span></a></div></div>'};
+ const mbtn=mail?'<a class="cbtn mail" href="mailto:'+esc(mail)+'?subject='+encodeURIComponent('Richiesta informazioni')+'&body='+MSG+'">'+IC.ml+'<span>Scrivi una email</span></a>':'';
+ $('talkP').innerHTML=PP.map(card).join('')+(mail?'<div class="pc pc-mail"><strong>Email</strong><span class="pc-n">'+esc(mail)+'</span><div class="pc-b">'+mbtn+'</div></div>':'');
+ $('fabP').innerHTML=PP.map(card).join('')+(mail?'<div class="pc">'+mbtn+'</div>':'');
+ document.querySelectorAll('[data-contacts]').forEach(e=>{e.innerHTML=PP.map(p=>{const n=num(p);return esc((p.nome||'')+' '+(p.cognome||'')).trim()+'<br><a href="tel:+'+n+'">'+esc(p.telefono)+'</a> · <a href="https://wa.me/'+n+'" target="_blank" rel="noopener">WhatsApp</a>'}).join('<br>')+(mail?'<br><a href="mailto:'+esc(mail)+'">'+esc(mail)+'</a>':'')});
+ if(window.setLang){let st='it';try{st=localStorage.getItem('lang')||'it'}catch(e){}setLang(st)}
+}
+
+(function(){const D={"Contatto diretto": ["Direct contact", "Contacto directo"], "Scrivete a Rachele o Giacomo": ["Write to Rachele or Giacomo", "Escribid a Rachele o Giacomo"], "Per una domanda, una richiesta particolare o per prenotare senza intermediari: rispondiamo noi, di persona.": ["For a question, a special request or to book without intermediaries: we answer you ourselves, in person.", "Para una pregunta, una petición especial o para reservar sin intermediarios: os respondemos nosotros, en persona."], "Chiama": ["Call", "Llamar"], "Scrivi una email": ["Send an email", "Enviar un email"], "Scrivici direttamente": ["Write to us directly", "Escríbenos directamente"], "Scrivici": ["Message us", "Escríbenos"], "Verifica la disponibilità ›": ["Check availability ›", "Ver disponibilidad ›"],"Camera con vista": ["Room with a view", "Habitación con vistas"], "Letto matrimoniale, travi bianche a vista e porta finestra affacciata sulla campagna. Bagno privato con doppio lavabo.": ["Double bed, exposed white beams and a French window overlooking the countryside. Private bathroom with double washbasin.", "Cama de matrimonio, vigas blancas a la vista y puerta ventana con vistas al campo. Baño privado con doble lavabo."],"Gli interni": ["Inside", "El interior"], "Dentro Francigena 30, 31": ["Inside Francigena 30, 31", "Dentro de Francigena 30, 31"],"Gli ambienti": ["Our spaces", "Los espacios"], "Le foto degli ambienti": ["Photos of our spaces", "Fotos de los espacios"],"La dimora": ["The residence", "La residencia"], "Le foto della dimora": ["Photos of the residence", "Fotos de la residencia"],"Il B&B": ["The B&B", "El B&B"], "Le foto del B&B": ["B&B photos", "Fotos del B&B"], "Un edificio storico nel cuore del paese, restaurato con cura: soffitti affrescati, travi a vista, volte in mattoni e pavimenti in cotto. Vi accolgono Rachele e Giacomo.": ["A historic building in the heart of the village, carefully restored: frescoed ceilings, exposed beams, brick vaults and terracotta floors. Your hosts are Rachele and Giacomo.", "Un edificio histórico en el corazón del pueblo, restaurado con mimo: techos con frescos, vigas a la vista, bóvedas de ladrillo y suelos de barro cocido. Os reciben Rachele y Giacomo."], "Nel centro di Gambassi Terme, a pochi passi dalla piazza. Un edificio antico dove soffitti dipinti e travi in legno convivono con arredi semplici e luminosi: una sala per la colazione, un salotto con vista sui tetti e camere doppie, tutte con bagno privato.": ["In the centre of Gambassi Terme, a few steps from the square. An old building where painted ceilings and wooden beams meet simple, bright furnishings: a breakfast room, a lounge overlooking the rooftops and double rooms, all with private bathroom.", "En el centro de Gambassi Terme, a pocos pasos de la plaza. Un edificio antiguo donde techos pintados y vigas de madera conviven con muebles sencillos y luminosos: una sala de desayunos, un salón con vistas a los tejados y habitaciones dobles, todas con baño privado."],"Una casa del centro storico restaurata con cura: soffitti affrescati, travi a vista, volte in mattoni e pavimenti in cotto. Vi accolgono Rachele e Giacomo.": ["A house in the old town, carefully restored: frescoed ceilings, exposed beams, brick vaults and terracotta floors. Your hosts are Rachele and Giacomo.", "Una casa del casco antiguo restaurada con mimo: techos con frescos, vigas a la vista, bóvedas de ladrillo y suelos de barro cocido. Os reciben Rachele y Giacomo."], "Nel centro di Gambassi Terme, a pochi passi dalla piazza. Una casa antica dove soffitti dipinti e travi in legno convivono con arredi semplici e luminosi: una sala per la colazione, un salotto con vista sui tetti e camere doppie, tutte con bagno privato.": ["In the centre of Gambassi Terme, a few steps from the square. An old house where painted ceilings and wooden beams meet simple, bright furnishings: a breakfast room, a lounge overlooking the rooftops and double rooms, all with private bathroom.", "En el centro de Gambassi Terme, a pocos pasos de la plaza. Una casa antigua donde techos pintados y vigas de madera conviven con muebles sencillos y luminosos: una sala de desayunos, un salón con vistas a los tejados y habitaciones dobles, todas con baño privado."], "Al mattino, nella sala con il soffitto a travi e il pavimento in cotto, attorno a un grande tavolo in legno. Il modo giusto per partire verso la tappa del giorno.": ["In the morning, in the room with the beamed ceiling and terracotta floor, around a large wooden table. The right way to set off on the day's stage.", "Por la mañana, en la sala con techo de vigas y suelo de barro cocido, alrededor de una gran mesa de madera. La mejor manera de salir hacia la etapa del día."], "Il salotto con il soffitto affrescato e la finestra sul campanile: un angolo tranquillo per leggere o riposare dopo il cammino.": ["The lounge with its frescoed ceiling and a window onto the bell tower: a quiet corner to read or rest after the walk.", "El salón con techo de frescos y ventana al campanario: un rincón tranquilo para leer o descansar después del camino."], "Timbro sulla credenziale, Wi‑Fi gratuito e un letto comodo a metà strada tra San Miniato e San Gimignano.": ["Credential stamp, free Wi‑Fi and a comfortable bed halfway between San Miniato and San Gimignano.", "Sello en la credencial, Wi‑Fi gratis y una cama cómoda a medio camino entre San Miniato y San Gimignano."],"Lungo i sentieri": ["Along the trails", "A lo largo de los senderos"], "Il geyser dei Bollori": ["The Bollori geyser", "El géiser de los Bollori"], "Il torrente Casciani": ["The Casciani stream", "El arroyo Casciani"],"Dal paese, a piedi": ["From the village, on foot", "Desde el pueblo, a pie"], "I sentieri dei Casciani": ["The Casciani trails", "Los senderos de los Casciani"], "Cinque anelli nei boschi lungo il torrente Casciani, tra il borgo, la Via Francigena e la Via del Sale: l'acquedotto della Forra, le grotte dell'eremita Maurizio, il piccolo geyser dei Bollori, i vecchi mulini e il Rio dell'acqua calda. Da 2 a 13 km, con tracce GPX.": ["Five loops through the woods along the Casciani stream, between the village, the Via Francigena and the Via del Sale: the Forra aqueduct, the caves of the hermit Maurizio, the little Bollori geyser, old mills and the Rio dell'acqua calda (warm-water brook). From 2 to 13 km, with GPX tracks.", "Cinco rutas circulares por los bosques junto al arroyo Casciani, entre el pueblo, la Vía Francígena y la Via del Sale: el acueducto de la Forra, las grutas del ermitaño Maurizio, el pequeño géiser de los Bollori, antiguos molinos y el Rio dell'acqua calda. De 2 a 13 km, con trazas GPX."], "I percorsi": ["The routes", "Las rutas"],"A piedi dal centro": ["Walking distance from the centre", "A pie desde el centro"], "Pieve romanica in arenaria dorata, tappa XX di Sigerico.": ["Romanesque church in golden sandstone, Sigeric's stop XX.", "Iglesia románica de arenisca dorada, parada XX de Sigerico."], "20 min in auto": ["20 min by car", "20 min en coche"], "30 min in auto": ["30 min by car", "30 min en coche"], "circa 1 h in auto": ["about 1 h by car", "aprox. 1 h en coche"], "Le torri medievali, la tappa successiva della Francigena.": ["The medieval towers, the next stage of the Francigena.", "Las torres medievales, la siguiente etapa de la Francígena."], "La città etrusca dell'alabastro, sulle colline.": ["The Etruscan town of alabaster, up in the hills.", "La ciudad etrusca del alabastro, en las colinas."], "Piazza del Campo e la Torre del Mangia.": ["Piazza del Campo and the Torre del Mangia.", "La Piazza del Campo y la Torre del Mangia."], "Il Duomo di Brunelleschi e gli Uffizi.": ["Brunelleschi's Duomo and the Uffizi.", "El Duomo de Brunelleschi y los Uffizi."], "Piazza dei Miracoli e la Torre pendente.": ["Piazza dei Miracoli and the Leaning Tower.", "La Piazza dei Miracoli y la Torre inclinada."],"San Gimignano e le sue torri a 15–20 minuti in auto, Volterra, la città etrusca, a circa 30 minuti.": ["San Gimignano and its towers 15–20 minutes by car, Volterra, the Etruscan town, about 30 minutes away.", "San Gimignano y sus torres a 15–20 minutos en coche, Volterra, la ciudad etrusca, a unos 30 minutos."], "Tempi indicativi in auto da Gambassi Terme.": ["Approximate driving times from Gambassi Terme.", "Tiempos aproximados en coche desde Gambassi Terme."], "Firenze": ["Florence", "Florencia"],"Le camere doppie": ["Double rooms", "Habitaciones dobles"], "Camera con balcone": ["Room with balcony", "Habitación con balcón"], "Letto matrimoniale, travi bianche a vista e porta finestra con balconcino sulla campagna. Bagno privato con doppio lavabo.": ["Double bed, exposed white beams and a French window with a small balcony over the countryside. Private bathroom with double washbasin.", "Cama de matrimonio, vigas blancas a la vista y puerta ventana con balconcito al campo. Baño privado con doble lavabo."], "Camera con cabina armadio": ["Room with walk-in wardrobe", "Habitación con vestidor"], "Letto matrimoniale, carta da parati a righe e cabina armadio. Bagno privato con finestra e doccia.": ["Double bed, striped wallpaper and walk-in wardrobe. Private bathroom with window and shower.", "Cama de matrimonio, papel pintado de rayas y vestidor. Baño privado con ventana y ducha."], "Camera con volta in pietra": ["Room with stone vault", "Habitación con bóveda de piedra"], "Volta in mattoni e muro in pietra originale, letto matrimoniale. Bagno privato con soffitto a volta.": ["Brick vault and original stone wall, double bed. Private bathroom with vaulted ceiling.", "Bóveda de ladrillo y muro de piedra original, cama de matrimonio. Baño privado con techo abovedado."], "Camera affrescata": ["Frescoed room", "Habitación con frescos"], "Soffitto con decorazioni dipinte, finestra sul verde, bollitore per tè e tisane. Bagno privato con doccia.": ["Hand-painted ceiling decorations, window onto greenery, kettle for tea and infusions. Private bathroom with shower.", "Techo con decoraciones pintadas, ventana a la vegetación, hervidor para té e infusiones. Baño privado con ducha."], "Camera verde": ["Green room", "Habitación verde"], "Testiera verde salvia, travi bianche e luce calda. Bagno privato con doppio lavabo.": ["Sage-green headboard, white beams and warm light. Private bathroom with double washbasin.", "Cabecero verde salvia, vigas blancas y luz cálida. Baño privado con doble lavabo."], "La camera": ["The room", "La habitación"], "La cabina armadio": ["The walk-in wardrobe", "El vestidor"], "La sala colazione": ["The breakfast room", "La sala de desayunos"], "I tetti di Gambassi": ["The rooftops of Gambassi", "Los tejados de Gambassi"], "Il salotto affrescato": ["The frescoed lounge", "El salón con frescos"],"Menu": ["Menu", "Menú"], "Galleria": ["Gallery", "Galería"], "Prenota ora": ["Book now", "Reservar"], "✕ Chiudi": ["✕ Close", "✕ Cerrar"], "Home": ["Home", "Inicio"], "Camere": ["Rooms", "Habitaciones"], "La casa": ["The house", "La casa"], "Il cammino": ["The walk", "El camino"], "Dintorni": ["Surroundings", "Alrededores"], "Dove siamo e contatti": ["Location & contact", "Ubicación y contacto"], "Arrivo": ["Arrival", "Llegada"], "Partenza": ["Departure", "Salida"], "Ospiti": ["Guests", "Huéspedes"], "Verifica disponibilità": ["Check availability", "Ver disponibilidad"], "Miglior tariffa garantita": ["Best rate guaranteed", "Mejor tarifa garantizada"], "prenotando sul sito · disponibilità allineata con Booking.com [in arrivo]": ["when booking on our website · availability synced with Booking.com [coming soon]", "reservando en nuestra web · disponibilidad sincronizada con Booking.com [próximamente]"], "Dove una tappa della Via Francigena finisce e l'altra comincia": ["Where one stage of the Via Francigena ends and the next begins", "Donde termina una etapa de la Vía Francígena y empieza la siguiente"], "Gambassi Terme è l'arrivo della tappa 30, da San Miniato, e la partenza della tappa 31, verso San Gimignano. Il nostro B&B è nel centro del paese, con una decina di camere per pellegrini e viaggiatori.": ["Gambassi Terme is the end of stage 30, from San Miniato, and the start of stage 31, towards San Gimignano. Our B&B is in the village centre, with about ten rooms for pilgrims and travellers.", "Gambassi Terme es la llegada de la etapa 30, desde San Miniato, y la salida de la etapa 31, hacia San Gimignano. Nuestro B&B está en el centro del pueblo, con unas diez habitaciones para peregrinos y viajeros."], "[Due righe sulla storia della casa e su chi vi accoglie.]": ["[A couple of lines about the house and your hosts.]", "[Un par de líneas sobre la casa y quién os recibe.]"], "Scopri": ["Discover", "Descubrir"], "Le camere": ["Rooms", "Habitaciones"], "Camera": ["Room", "Habitación"], "Doppia o matrimoniale": ["Double or twin", "Doble o de matrimonio"], "[Descrizione: letto matrimoniale o due letti, bagno privato, finestre sul centro storico di Gambassi.]": ["[Description: double or twin beds, private bathroom, windows on Gambassi's old town.]", "[Descripción: cama de matrimonio o dos camas, baño privado, ventanas al centro histórico de Gambassi.]"], "ospiti": ["guests", "huéspedes"], "gratuito": ["free", "gratis"], "a notte da": ["per night from", "por noche desde"], "Prev": ["Prev", "Ant."], "Next": ["Next", "Sig."], "Nel centro di Gambassi Terme, a pochi passi dalla piazza. [Descrizione degli spazi comuni: sala colazione, ingresso, eventuale terrazza o giardino.]": ["In the centre of Gambassi Terme, a few steps from the square. [Description of shared spaces: breakfast room, entrance, terrace or garden.]", "En el centro de Gambassi Terme, a pocos pasos de la plaza. [Descripción de los espacios comunes: sala de desayunos, entrada, terraza o jardín.]"], "Foto sala colazione": ["Breakfast room photo", "Foto sala de desayunos"], "La colazione": ["Breakfast", "El desayuno"], "[Orari e cosa si trova: dolce, salato, prodotti del territorio.]": ["[Times and what's served: sweet, savoury, local produce.]", "[Horario y qué se sirve: dulce, salado, productos locales.]"], "Foto interni": ["Interior photo", "Foto interiores"], "Gli spazi": ["The spaces", "Los espacios"], "[Ingresso, salotto, deposito zaini e biciclette.]": ["[Entrance, lounge, backpack and bike storage.]", "[Entrada, salón, consigna de mochilas y bicicletas.]"], "Le foto della casa": ["Photos of the house", "Fotos de la casa"], "Camere, bagni, salotto e spazi comuni.": ["Rooms, bathrooms, lounge and shared spaces.", "Habitaciones, baños, salón y espacios comunes."], "Apri la galleria →": ["Open the gallery →", "Abrir la galería →"], "Via Francigena": ["Via Francigena", "Vía Francígena"], "Ospitalità per pellegrini": ["Hospitality for pilgrims", "Hospitalidad para peregrinos"], "La Via Francigena segue il diario di Sigerico, arcivescovo di Canterbury, che alla fine del X secolo tornò da Roma annotando le sue soste. Oggi attraversa pievi, borghi e campagne, in parte su strada e in parte sui vecchi tracciati tra i campi.": ["The Via Francigena follows the diary of Sigeric, Archbishop of Canterbury, who at the end of the 10th century returned from Rome noting each stop. Today it crosses parish churches, villages and countryside, partly on roads and partly on old tracks across the fields.", "La Vía Francígena sigue el diario de Sigerico, arzobispo de Canterbury, que a finales del siglo X volvió de Roma anotando sus paradas. Hoy atraviesa iglesias, pueblos y campiña, en parte por carretera y en parte por antiguos senderos entre los campos."], "Timbro sulla credenziale, Wi‑Fi gratuito, [tariffa dedicata, colazione presto e deposito zaini].": ["Credential stamp, free Wi‑Fi, [pilgrim rate, early breakfast and backpack storage].", "Sello en la credencial, Wi‑Fi gratis, [tarifa para peregrinos, desayuno temprano y consigna de mochilas]."], "Santa Maria a Chianni, pieve romanica di inizio Duecento poco fuori dal centro, che Sigerico annotò come XX tappa del suo ritorno da Roma. E poi il vetro di Gambassi, le terme del Parco Benestare, i sentieri dei Casciani, San Gimignano e Volterra.": ["Santa Maria a Chianni, an early 13th-century Romanesque church just outside the centre, recorded by Sigeric as stop XX on his way back from Rome. Then Gambassi glass, the Parco Benestare spa, the Casciani trails, San Gimignano and Volterra.", "Santa Maria a Chianni, iglesia románica de principios del siglo XIII a las afueras del centro, que Sigerico anotó como parada XX de su regreso de Roma. Y además el vidrio de Gambassi, las termas del Parco Benestare, los senderos de los Casciani, San Gimignano y Volterra."], "Pieve di Chianni": ["Chianni parish church", "Iglesia de Chianni"], "Facciata in arenaria dorata, in stile romanico.": ["Golden sandstone façade, in Romanesque style.", "Fachada de arenisca dorada, de estilo románico."], "Foto San Gimignano": ["San Gimignano photo", "Foto San Gimignano"], "San Gimignano e Volterra": ["San Gimignano and Volterra", "San Gimignano y Volterra"], "Le torri a una tappa di cammino, la città etrusca poco più in là.": ["The towers one walking stage away, the Etruscan town a little further.", "Las torres a una etapa a pie, la ciudad etrusca un poco más allá."], "Contatti": ["Contact", "Contacto"], "Info": ["Info", "Info"], "Verifica la disponibilità": ["Check availability", "Ver disponibilidad"], "bed and breakfast · gambassi terme": ["bed and breakfast · gambassi terme", "bed and breakfast · gambassi terme"], "Prenota": ["Book", "Reservar"], "Adulti": ["Adults", "Adultos"], "Cerca": ["Search", "Buscar"], "Disponibilità e prezzi in tempo reale, allineati con Booking.com [in arrivo].": ["Real-time availability and prices, synced with Booking.com [coming soon].", "Disponibilidad y precios en tiempo real, sincronizados con Booking.com [próximamente]."], "Foto: facciata o cortile": ["Photo: façade or courtyard", "Foto: fachada o patio"], "Benvenuti": ["Welcome", "Bienvenidos"], "Nel centro di Gambassi Terme, il B&B Francigena 30, 31 si trova esattamente tra due tappe della Via Francigena: l'arrivo della 30, da San Miniato, e la partenza della 31, verso San Gimignano.": ["In the centre of Gambassi Terme, B&B Francigena 30, 31 sits exactly between two stages of the Via Francigena: the end of stage 30, from San Miniato, and the start of stage 31, towards San Gimignano.", "En el centro de Gambassi Terme, el B&B Francigena 30, 31 está justo entre dos etapas de la Vía Francígena: la llegada de la 30, desde San Miniato, y la salida de la 31, hacia San Gimignano."], "[Una frase sulla casa e sull'atmosfera.]": ["[A sentence about the house and its atmosphere.]", "[Una frase sobre la casa y su ambiente.]"], "Vedi la casa": ["See the house", "Ver la casa"], "Le nostre 10 camere": ["Our 10 rooms", "Nuestras 10 habitaciones"], "Camera Matrimoniale": ["Double Room", "Habitación Doble"], "Scopri di più sull'alloggio": ["More about this room", "Más sobre la habitación"], "Foto": ["Photo", "Foto"], "Camera Singola": ["Single Room", "Habitación Individual"], "Camera Tripla": ["Triple Room", "Habitación Triple"], "Vedi tutti gli alloggi": ["See all rooms", "Ver todas las habitaciones"], "Galleria fotografica": ["Photo gallery", "Galería de fotos"], "Tutte le foto": ["All photos", "Todas las fotos"], "Foto: pellegrini sul sentiero": ["Photo: pilgrims on the trail", "Foto: peregrinos en el sendero"], "Sulla Via Francigena, il cammino di Sigerico da Canterbury a Roma, Gambassi è il punto di sosta tra due tappe.": ["On the Via Francigena, Sigeric's route from Canterbury to Rome, Gambassi is the stop between two stages.", "En la Vía Francígena, el camino de Sigerico de Canterbury a Roma, Gambassi es la parada entre dos etapas."], "da San Miniato": ["from San Miniato", "desde San Miniato"], "verso San Gimignano": ["towards San Gimignano", "hacia San Gimignano"], "Timbro sulla credenziale, Wi‑Fi gratuito e [tariffa pellegrini].": ["Credential stamp, free Wi‑Fi and [pilgrim rate].", "Sello en la credencial, Wi‑Fi gratis y [tarifa para peregrinos]."], "Scoprire": ["Discover", "Descubrir"], "Chiesa romanica di inizio Duecento, annotata da Sigerico come XX tappa del suo viaggio.": ["Early 13th-century Romanesque church, recorded by Sigeric as stop XX of his journey.", "Iglesia románica de principios del siglo XIII, anotada por Sigerico como parada XX de su viaje."], "Il vetro e le terme": ["Glass and thermal baths", "El vidrio y las termas"], "La mostra del vetro di Gambassi e le terme del Parco Benestare.": ["The Gambassi glass exhibition and the Parco Benestare spa.", "La exposición del vidrio de Gambassi y las termas del Parco Benestare."], "Le torri medievali e la città etrusca, a poca distanza.": ["The medieval towers and the Etruscan town, close by.", "Las torres medievales y la ciudad etrusca, a poca distancia."], "Gambassi Terme, 50050, Italia": ["Gambassi Terme, 50050, Italy", "Gambassi Terme, 50050, Italia"], "Nome completo": ["Full name", "Nombre completo"], "Numero di telefono": ["Phone number", "Número de teléfono"], "La tua email": ["Your email", "Tu email"], "I tuoi messaggi": ["Your message", "Tu mensaje"], "Accetto l'informativa sulla privacy": ["I accept the privacy policy", "Acepto la política de privacidad"], "I dati raccolti in questo modulo servono solo a rispondere alla vostra richiesta.": ["The data collected in this form is used only to reply to your request.", "Los datos de este formulario solo se usan para responder a tu solicitud."], "Invia": ["Send", "Enviar"], "Grazie: nella versione pubblicata il messaggio arriverà alla vostra email.": ["Thank you: on the live site the message will reach your inbox.", "Gracias: en la web publicada el mensaje llegará a vuestro email."], "Prenota questa camera": ["Book this room", "Reservar esta habitación"], "Nome": ["Name", "Nombre"], "Numero telefonico": ["Phone number", "Número de teléfono"], "E-mail": ["Email", "Email"], "Messaggio": ["Message", "Mensaje"], "Foto camera doppia": ["Double room photo", "Foto habitación doble"], "Singola": ["Single", "Individual"], "[Descrizione: pensata per chi cammina da solo, bagno privato.]": ["[Description: designed for solo walkers, private bathroom.]", "[Descripción: pensada para quien camina solo, baño privado.]"], "Foto camera singola": ["Single room photo", "Foto habitación individual"], "Tripla o famiglia": ["Triple or family", "Triple o familiar"], "[Descrizione: spazio per famiglie e piccoli gruppi di pellegrini.]": ["[Description: room for families and small groups of pilgrims.]", "[Descripción: espacio para familias y pequeños grupos de peregrinos.]"], "Foto camera tripla": ["Triple room photo", "Foto habitación triple"], "Il salotto": ["The lounge", "El salón"], "Camera matrimoniale": ["Double room", "Habitación doble"], "Il bagno": ["The bathroom", "El baño"], "Il bagno della camera": ["The room's bathroom", "El baño de la habitación"], "Bagno": ["Bathroom", "Baño"], "[Descrizione: letto matrimoniale, bagno privato con volta in pietra, finestre sul centro di Gambassi.]": ["[Description: double bed, private bathroom with stone vault, windows on the centre of Gambassi.]", "[Descripción: cama de matrimonio, baño privado con bóveda de piedra, ventanas al centro de Gambassi.]"], "[Descrizione della camera singola.]": ["[Single room description.]", "[Descripción de la habitación individual.]"], "[Descrizione della camera tripla.]": ["[Triple room description.]", "[Descripción de la habitación triple.]"], "Qui comparirà la disponibilità reale delle camere, collegata a Booking.com.": ["Real room availability, linked to Booking.com, will appear here.", "Aquí aparecerá la disponibilidad real de las habitaciones, conectada a Booking.com."], "Qui compariranno le camere libere con i prezzi, collegate a Booking.com.": ["Available rooms and prices, linked to Booking.com, will appear here.", "Aquí aparecerán las habitaciones libres con precios, conectadas a Booking.com."], "Foto in arrivo": ["Photos coming soon", "Fotos próximamente"], "Altre foto in arrivo": ["More photos coming soon", "Más fotos próximamente"], "Tel. [+39 —]": ["Tel. [+39 —]", "Tel. [+39 —]"], "Privacy · Cookie": ["Privacy · Cookies", "Privacidad · Cookies"], "Gambassi → San Gimignano": ["Gambassi → San Gimignano", "Gambassi → San Gimignano"]};window.__D=D;let L='it';
+function tr(s){const k=s.trim();if(!k)return null;const i=L==='en'?0:1;if(D[k])return s.replace(k,D[k][i]);if(k.indexOf(' · ')>0){let ch=false;const o=k.split(' · ').map(p=>{if(D[p]){ch=true;return D[p][i]}return p});if(ch)return s.replace(k,o.join(' · '))}return null}
+function base(n){return (n.__tr!==undefined&&n.nodeValue===n.__tr)?n.__it:n.nodeValue}
+function doNode(n){const b=base(n);if(L==='it'){if(n.__tr!==undefined&&n.nodeValue===n.__tr)n.nodeValue=b;n.__tr=undefined;return}const t=tr(b);if(t!==null){n.__it=b;n.__tr=t;n.nodeValue=t}}
+function walk(root){if(root.nodeType===3){doNode(root);return}if(root.nodeType!==1||/^(SCRIPT|STYLE)$/.test(root.nodeName))return;const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:x=>/^(SCRIPT|STYLE)$/.test(x.parentNode.nodeName)?2:1});let n;while(n=w.nextNode())doNode(n);
+root.querySelectorAll&&root.querySelectorAll('[placeholder]').forEach(e=>{if(e.__ph===undefined)e.__ph=e.placeholder;const i=L==='en'?0:1;e.placeholder=L==='it'?e.__ph:(D[e.__ph]?D[e.__ph][i]:e.__ph)})}
+const mo=new MutationObserver(ms=>{if(L==='it')return;mo.disconnect();ms.forEach(m=>{if(m.type==='characterData')doNode(m.target);else m.addedNodes.forEach(walk)});obs()});
+function obs(){mo.observe(document.body,{subtree:true,childList:true,characterData:true})}
+window.setLang=function(l){L=l;mo.disconnect();walk(document.body);obs();document.documentElement.lang=l;
+document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));const s=document.getElementById('langSel');if(s)s.value=l;try{localStorage.setItem('lang',l)}catch(e){}};
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+const s=document.getElementById('langSel');if(s)s.addEventListener('change',()=>setLang(s.value));
+let st='it';try{st=localStorage.getItem('lang')||'it'}catch(e){}setLang(st);})();
+</script>
+<script>(function(){const b=document.getElementById('fabBtn'),p=document.getElementById('fabPanel');b.onclick=()=>{p.hidden=!p.hidden;b.setAttribute('aria-expanded',String(!p.hidden))};p.querySelector('.fab-book').onclick=()=>{p.hidden=true};document.addEventListener('click',e=>{if(!p.hidden&&!e.target.closest('#fab'))p.hidden=true})})();</script>
+<script>fetch('/content/sito.json',{cache:'no-cache'}).then(r=>r.json()).then(boot).catch(e=>console.error('contenuti',e));</script>
+</body>
+</html>
