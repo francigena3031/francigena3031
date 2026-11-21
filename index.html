@@ -66,7 +66,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero-img span{font:500 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:6px 12px;color:rgba(255,255,255,.8)}
 .hero-txt{position:relative;padding-bottom:16vh}
 .hero-sub{text-align:center;padding:34px 16px 6px;background:var(--paper)}
-.hero-sub h1{font:400 clamp(22px,2.6vw,32px)/1.3 var(--serif);letter-spacing:.06em;color:var(--ink);margin:0}
+.hero-sub h1{font:400 clamp(17px,5vw,32px)/1.3 var(--serif);letter-spacing:.04em;color:var(--ink);margin:0;white-space:nowrap}
+@media (min-width:701px){.hero-sub h1{font-size:clamp(22px,2.6vw,32px);letter-spacing:.06em}}
 .hero-sub h1 span{color:var(--gold);margin:0 .3em}
 .hero .kicker{color:#fff}
 .hero h1{font-size:clamp(46px,7vw,92px);line-height:1;margin-top:14px;max-width:14ch}
@@ -248,7 +249,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <section class="hero">
     <div class="hero-img" role="img" aria-label="Il salotto con il soffitto affrescato e la vista sui tetti di Gambassi"></div>
   </section>
-  <div class="hero-sub"><h1>Francigena <span>·</span> Gambassi Terme</h1></div>
+  <div class="hero-sub"><h1 id="heroSub">Francigena 30/31 <span>-</span> Gambassi Terme</h1></div>
 
   <section class="book" id="prenota">
     <form class="w" id="bookForm">
@@ -417,6 +418,7 @@ addEventListener('keydown',e=>{if(ov.hidden)return;if(e.key==='Escape'){big.hidd
 function boot(C){
  const D=window.__D||{};const T=(it,en,es)=>{if(it&&(en||es))D[it]=[en||it,es||it]};
  const H=C.home||{};
+ if(H.scritta_sotto_foto){{const sp=v=>String(v||'').split(/ [·\-–] /),a=sp(H.scritta_sotto_foto),b=sp(H.scritta_sotto_foto_en),c=sp(H.scritta_sotto_foto_es);a.forEach((x,i)=>T(x.trim(),(b[i]||'').trim(),(c[i]||'').trim()))}$('heroSub').innerHTML=esc(H.scritta_sotto_foto).replace(/ (·|-|–) /g,' <span>$1</span> ')}
  if(H.foto_principale)document.querySelector('.hero-img').style.backgroundImage='linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,0) 22%),url("'+im(H.foto_principale,2000)+'")';
  const HM={'sala-colazione':H.foto_colazione,'salotto':H.foto_salotto};
  document.querySelectorAll('[data-img]').forEach(e=>{const u=HM[e.dataset.img];if(u)e.style.backgroundImage='url("'+im(u,1200)+'")'});

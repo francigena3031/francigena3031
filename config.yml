@@ -30,7 +30,7 @@ collections:
             collapsed: false
             fields:
               - { label: "Foto principale (in alto)", name: foto_principale, widget: image, hint: "Meglio orizzontale, almeno 2000 px di larghezza" }
-              - { label: "Scritta sotto la foto principale", name: scritta_sotto_foto, widget: string, required: false, hint: "Se vuota resta 'Francigena · Gambassi Terme'. Usa ' · ' per il puntino centrale." }
+              - { label: "Scritta sotto la foto principale", name: scritta_sotto_foto, widget: string, required: false, hint: "Se vuota resta 'Francigena 30/31 - Gambassi Terme'." }
               - { label: "Scritta sotto la foto in inglese", name: scritta_sotto_foto_en, widget: string, required: false }
               - { label: "Scritta sotto la foto in spagnolo", name: scritta_sotto_foto_es, widget: string, required: false }
               - { label: "Foto 'La colazione'", name: foto_colazione, widget: image }
